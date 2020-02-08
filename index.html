@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Parallex</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <section class="zoom">
+      <img src="mountain1.png" id="layer1">
+      <img src="mountain2.png" id="layer2">
+      <img src="text.png" id="text">
+    </section>
+    <section class="content">
+      <h1>Parallex Webpage and its cool style</h1>
+      <p>In 1996, Microsoft released its first competitive browser, which was complete with its own features and HTML tags. It was also the first browser to support style sheets, which at the time was seen as an obscure authoring technique and is today an important aspect of web design.[5] The HTML markup for tables was originally intended for displaying tabular data. However designers quickly realized the potential of using HTML tables for creating the complex, multi-column layouts that were otherwise not possible. At this time, as design and good aesthetics seemed to take precedence over good mark-up structure, and little attention was paid to semantics and web accessibility. HTML sites were limited in their design options, even more so with earlier versions of HTML. To create complex designs, many web designers had to use complicated table structures or even use blank spacer .GIF images to stop empty table cells from collapsing.[6] CSS was introduced in December 1996 by the W3C to support presentation and layout. This allowed HTML code to be semantic rather than both semantic and presentational, and improved web accessibility, see tableless web design.
+
+In 1996, Flash (originally known as FutureSplash) was developed. At the time, the Flash content development tool was relatively simple compared to now, using basic layout and drawing tools, a limited precursor to ActionScript, and a timeline, but it enabled web designers to go beyond the point of HTML, animated GIFs and JavaScript. However, because Flash required a plug-in, many web developers avoided using it for fear of limiting their market share due to lack of compatibility. Instead, designers reverted to gif animations (if they didn't forego using motion graphics altogether) and JavaScript for widgets. But the benefits of Flash made it popular enough among specific target markets to eventually work its way to the vast majority of browsers, and powerful enough to be used to develop entire sites.[6]</p>
+    </section>
+    <script type="text/javascript">
+      var layer1 = document.getElementById('layer1')
+      scroll = window.pageYOffset;
+      document.addEventListener('scroll',
+       function (e){
+         var offset = window.pageYOffset;
+         scroll = offset;
+         layer1.style.width = (100 + scroll/5) + '%';
+       });
+
+       var layer2 = document.getElementById('layer2')
+       scroll = window.pageYOffset;
+       document.addEventListener('scroll',
+        function (e){
+          var offset = window.pageYOffset;
+          scroll = offset;
+          layer2.style.width = (100 + scroll/5) + '%';
+          layer2.style.left = scroll/50 + '%';
+        });
+
+        var text = document.getElementById('text')
+        scroll = window.pageYOffset;
+        document.addEventListener('scroll',
+         function (e){
+           var offset = window.pageYOffset;
+           scroll = offset;
+           layer2.style.width = (100 + scroll/5) + '%';
+           text.style.top = - scroll/20 + '%';
+         });
+    </script>
+  </body>
+</html>
